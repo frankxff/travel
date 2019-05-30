@@ -2,8 +2,10 @@
     <div class="wrapper">
         <swiper :options="swiperOption" >
         <!-- slides -->
-        <swiper-slide><img class="swiper-img" src="./img/qianggou.jpg" alt="一元抢购"></swiper-slide>
-        <swiper-slide><img class="swiper-img" src="./img/mulantianchi.jpg" alt="木兰天池活动"></swiper-slide>
+        <swiper-slide v-for="item of iconList" :key="item.id">
+            <img  class="swiper-img" :src="item.imgUrl" >
+        </swiper-slide>
+
         <div class="swiper-pagination"  slot="pagination"></div>
         </swiper>
     </div>
@@ -20,7 +22,14 @@ export default {
                 el: '.swiper-pagination'
             },
             loop: true
-        }
+        },
+        iconList: [{
+            id: '0001',
+            imgUrl: require('./img/qianggou.jpg')
+        },{
+            id: '0002',
+            imgUrl: require('./img/mulantianchi.jpg')
+        }]
       }
     }
   }
