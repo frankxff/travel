@@ -16,51 +16,13 @@
 <script>
 export default {
     name: "HomeIcons",
-    data () {
-        return {
-            iconList: [{
-                id: '0001',
-                imgUrl: require('./img/jingdian.png'),
-                desc: '景点门票'
-            },{
-                id: '0002',
-                imgUrl: require('./img/yiriyou.png'),
-                desc: '一日游'
-            },{
-                id: '0003',
-                imgUrl: require('./img/wuhan.png'),
-                desc: '武汉必游'
-            },{
-                id: '0004',
-                imgUrl: require('./img/qingziyou.png'),
-                desc: '亲子游'
-            },{
-                id: '0005',
-                imgUrl: require('./img/mulantianchi.png'),
-                desc: '木兰天池'
-            },{
-                id: '0006',
-                imgUrl: require('./img/dongzhiwu.png'),
-                desc: '动植物园'
-            },{
-                id: '0007',
-                imgUrl: require('./img/taqing.png'),
-                desc: '踏青赏花'
-            },{
-                id: '0008',
-                imgUrl: require('./img/huanlegu.png'),
-                desc: '欢乐谷'
-            },{
-                id: '0009',
-                imgUrl: require('./img/jidihaiyang.png'),
-                desc: '极地海洋世界大冒险'
-            }]
-        }
+    props: {
+        list: Array
     },
     computed: {
         pages () {
             const pages = []
-            this.iconList.forEach((item, index) => {
+            this.list.forEach((item, index) => {
                 const page = Math.floor(index / 8)
                 if (!pages[page]) {
                     pages[page] = []
