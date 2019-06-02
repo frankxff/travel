@@ -2,7 +2,7 @@
     <div>
     <div class="recommend-title">热销推荐</div>
         <ul>
-            <li class="item" border-bottom v-for="item of recommendList" :key="item.id">
+            <li class="item" border-bottom v-for="item of list" :key="item.id">
                 <img class="item-img" :src="item.imgUrl" >
                 <div class="item-info">
                     <p class="item-title">{{item.title}}</p>
@@ -17,25 +17,8 @@
 <script>
 export default {
     name: 'HomeRecommend',
-    data () {
-        return {
-            recommendList: [{
-                id: '0001',
-                imgUrl: require('./img/haiyangguan.jpg'),
-                title: '武汉海昌极地海洋公园',
-                desc: '冰雪世界，美不胜收'
-            },{
-                id: '0002',
-                imgUrl: require('./img/jingligou.jpg'),
-                title: '锦里沟',
-                desc: '枫叶红于二月花，锦鲤来袭'
-            },{
-                id: '0003',
-                imgUrl: require('./img/mulantianchi.jpg'),
-                title: '木兰天池',
-                desc: '天池风光，风景如画'
-            }]
-        }
+    props: {
+        list: Array
     }
 }
 </script>
