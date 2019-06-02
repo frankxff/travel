@@ -17,7 +17,7 @@ import HomeWeekday from '../components/Weekday/Weekday'
 import axios from 'axios'
 
 export default {
-    name: 'Main',
+    name: 'Home',
     components: {
         HomeHeader,
         HomeSwiper,
