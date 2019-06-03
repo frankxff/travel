@@ -5,16 +5,17 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    city: '武汉'
+    city: localStorage.city || '武汉'
   },
   mutations: {
-    changeCityTo (state, city) {
+    changeCity (state, city) {
       state.city = city
+      localStorage.city = city
     }
   },
   actions: {
     changeCity (ctx, city) {
-      ctx.commit('changeCityTo', city)
+      ctx.commit('changeCity', city)
     }
   }
 })
