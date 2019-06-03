@@ -1,7 +1,7 @@
 <template>
     <div>
         <city-header></city-header>
-        <city-search></city-search>
+        <city-search :cities="cities"></city-search>
         <city-list
          :cities="cities"
          :hotCities="hotCities"
@@ -45,8 +45,8 @@ export default {
             res = res.data
             if (res.ret && res.data) {
                 const data = res.data
-                this.cities = res.data.cities
-                this.hotCities = res.data.hotCities
+                this.cities = data.cities
+                this.hotCities = data.hotCities
             }
         },
         handleLetterChange (letter) {
